@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sermon Recap Carousel — Life Pool Chapel</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Sermon Recap Carousel</h1>
+    <p class="tagline">Paste the transcript. Pick a look. Copy the instructions for Claude.</p>
+  </header>
+
+  <main id="app">
+    <section id="tool">
+      <div class="card">
+        <h2>1. Choose a template</h2>
+        <div id="templates" class="templates-grid">Loading templates…</div>
+      </div>
+
+      <div class="card">
+        <h2>2. Paste the sermon transcript</h2>
+        <textarea id="transcript" rows="14" placeholder="Paste the full transcript here…"></textarea>
+      </div>
+
+      <div class="card">
+        <h2>3. Copy the instructions for Claude</h2>
+        <p class="hint">
+          Tap the button below to copy a complete set of instructions. Then open your Claude
+          (the one connected to the church's Canva) — at
+          <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> or the Claude app —
+          start a new chat, paste, and send. Claude will draft the captions, build the carousel
+          in Canva, and give you download links right there in that chat — tap each one to save
+          the image, even on a phone.
+        </p>
+        <button id="copy-btn" type="button" disabled>Copy instructions for Claude</button>
+        <p id="copy-status" class="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
