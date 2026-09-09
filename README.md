@@ -89,10 +89,10 @@ Claude conversation task, not something you do by hand:
    is which (cover quote, headline, highlight, paragraph, etc.).
 2. Tell Claude you're adding a new template, share the design, and ask it to
    add a new entry to `public/templates.json` — a `"canva"` block like the
-   one already there for "Bishop Said — Classic Green," describing the
-   design ID, page ranges, and a plain-language description of each text
-   box's role. Also drop in a thumbnail image under
-   `public/assets/templates/<your-template-name>/`.
+   ones already there, describing the design ID, page ranges, and a
+   plain-language description of each text box's role. The picker just
+   shows the template's name and description as text, so no thumbnail image
+   is needed.
 3. No other code changes are needed — `public/js/app.js` reads that config
    to build instructions for any template listed there. Commit and push,
    and Vercel picks it up automatically.
@@ -105,7 +105,6 @@ public/
   css/style.css            — styling
   js/app.js                — loads templates.json and builds the Claude+Canva instructions
   templates.json           — the list of templates, including each one's Canva setup
-  assets/templates/        — thumbnail images for the template picker
 ```
 
 Everything outside `public/` (the old Node.js server, from an earlier

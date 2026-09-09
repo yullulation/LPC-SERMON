@@ -1,0 +1,100 @@
+:root {
+  --green: #035109;
+  --yellow: #ffed4f;
+  --cream: #f4f1ea;
+  --ink: #1c1c1c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.topbar {
+  background: var(--green);
+  color: white;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.topbar h1 { margin: 0 0 4px; font-size: 1.5rem; }
+.tagline { margin: 0; opacity: 0.85; font-size: 0.95rem; }
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.card h2 { margin-top: 0; font-size: 1.1rem; }
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+button {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+button:hover:not(:disabled) { opacity: 0.9; }
+
+.templates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.template-option {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #fafafa;
+  padding: 14px;
+}
+
+.template-option.selected { border-color: var(--green); background: #f4f9f4; }
+.template-option .label { font-size: 0.95rem; font-weight: 700; color: var(--green); }
+.template-option .desc { margin-top: 4px; font-size: 0.8rem; color: #555; line-height: 1.35; }
+
+.status { margin-top: 10px; font-size: 0.9rem; color: #555; display: inline-block; }
+.error { color: #b00020; font-size: 0.9rem; }
+
+.hint { font-size: 0.9rem; color: #444; line-height: 1.5; }
+.hint code { background: #f0eee6; padding: 1px 5px; border-radius: 4px; }
+
+.card h2 + textarea,
+.card textarea + h2 { margin-top: 4px; }
