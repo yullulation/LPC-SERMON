@@ -87,6 +87,15 @@ button:hover:not(:disabled) { opacity: 0.9; }
 }
 
 .template-option.selected { border-color: var(--green); background: #f4f9f4; }
+.template-option .preview {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #eee;
+}
 .template-option .label { font-size: 0.95rem; font-weight: 700; color: var(--green); }
 .template-option .desc { margin-top: 4px; font-size: 0.8rem; color: #555; line-height: 1.35; }
 
