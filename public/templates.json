@@ -19,6 +19,26 @@
         },
         "numberNote": "Each content page already has a small numbered circle (1, 2) in the top-right matching its page order — leave those untouched."
       }
+    },
+    {
+      "id": "template-2",
+      "name": "Template 2",
+      "description": "Black-and-white photo backgrounds, yellow accent word, rounded photo card — 3 content slides.",
+      "canva": {
+        "designId": "DAHUtYl5ruk",
+        "designName": "LPC Sermon Recap (Template 2)",
+        "totalPages": 5,
+        "contentPageRange": [2, 4],
+        "closingPage": 5,
+        "coverPage": 1,
+        "coverRole": "the one large quote text box sitting in the yellow-highlighted panel near the bottom of the cover page (page 1) — styled like “Example quote”, curly quotes included. Every other text box on page 1 (the small 'Bishop Said' label, 'Scroll to be blessed', and 'one for the week') is a fixed label — never change those.",
+        "slideRoles": {
+          "headline": "the white headline word stacked at the top-left of the page, above the highlight word (bold font)",
+          "highlight": "the yellow accent-colored word directly below the headline, same position, larger/bold font, ALL CAPS",
+          "paragraph": "the white paragraph text block positioned in the lower-left of the page, over the textured background (not on top of the photo)"
+        },
+        "numberNote": "Each content page already has a small yellow numbered circle badge in the top-right corner of the rounded photo card, matching page order — leave those untouched."
+      }
     }
   ]
 }
