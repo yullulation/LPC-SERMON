@@ -74,22 +74,21 @@ button:hover:not(:disabled) { opacity: 0.9; }
 
 .templates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 12px;
 }
 
 .template-option {
   border: 2px solid transparent;
   border-radius: 10px;
-  overflow: hidden;
   cursor: pointer;
-  text-align: center;
   background: #fafafa;
+  padding: 14px;
 }
 
-.template-option.selected { border-color: var(--green); }
-.template-option img { width: 100%; display: block; aspect-ratio: 4/5; object-fit: cover; }
-.template-option .label { padding: 8px; font-size: 0.85rem; font-weight: 600; }
+.template-option.selected { border-color: var(--green); background: #f4f9f4; }
+.template-option .label { font-size: 0.95rem; font-weight: 700; color: var(--green); }
+.template-option .desc { margin-top: 4px; font-size: 0.8rem; color: #555; line-height: 1.35; }
 
 .status { margin-top: 10px; font-size: 0.9rem; color: #555; display: inline-block; }
 .error { color: #b00020; font-size: 0.9rem; }

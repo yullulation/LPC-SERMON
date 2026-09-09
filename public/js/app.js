@@ -80,7 +80,7 @@ function loadTemplates() {
     const div = document.createElement("div");
     div.className = "template-option";
     div.dataset.id = t.id;
-    div.innerHTML = `<img src="./assets/templates/${t.thumbnail}" alt="${t.name}" /><div class="label">${t.name}</div>`;
+    div.innerHTML = `<div class="label">${t.name}</div><div class="desc">${t.description || ""}</div>`;
     div.addEventListener("click", () => selectTemplate(t.id));
     templatesEl.appendChild(div);
   });

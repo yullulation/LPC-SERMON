@@ -1,60 +1,15 @@
 {
-  "canvas": { "width": 1080, "height": 1350 },
   "templates": [
     {
-      "id": "bishop-said-classic",
-      "name": "Bishop Said — Classic Green",
-      "description": "The original Sermon Recap look: green split backgrounds, yellow accents, bold condensed headlines.",
-      "thumbnail": "stones-and-sacrifices/layout-a-bg.jpg",
-      "fonts": {
-        "display": "Anton",
-        "body": "Poppins"
-      },
-      "cover": {
-        "background": "stones-and-sacrifices/cover-bg.jpg",
-        "quote": {
-          "top": 936.7,
-          "left": 92.08,
-          "width": 323.22,
-          "height": 152.58,
-          "fontFamily": "Anton",
-          "fontSize": 60,
-          "color": "#035109",
-          "lineHeight": 1.05,
-          "maxWords": 3,
-          "note": "Keep to 2 words if at all possible — 3 is the hard ceiling. Longer wraps to 3 lines and collides with the caption below."
-        }
-      },
-      "contentLayouts": [
-        {
-          "id": "layoutA",
-          "background": "stones-and-sacrifices/layout-a-bg.jpg",
-          "photoOnTop": true,
-          "headline": { "top": 312.17, "left": 108, "width": 461.5, "fontFamily": "Anton", "fontSize": 118.4, "color": "#ffffff", "lineHeight": 1.0 },
-          "highlight": { "top": 474.45, "left": 108, "width": 391.8, "fontFamily": "Anton", "fontSize": 181.6, "color": "#ffed4f", "lineHeight": 1.0, "maxChars": 7 },
-          "paragraph": { "top": 836.88, "left": 108, "width": 802, "fontFamily": "Poppins", "fontWeight": 500, "fontSize": 30, "color": "#035109", "lineHeight": 1.35 },
-          "number": { "top": 249.39, "left": 894.01, "fontFamily": "Poppins", "fontWeight": 700, "fontSize": 53.7, "color": "#035109" }
-        },
-        {
-          "id": "layoutB",
-          "background": "stones-and-sacrifices/layout-b-bg.jpg",
-          "photoOnTop": false,
-          "headline": { "top": 719.46, "left": 108, "width": 461.5, "fontFamily": "Anton", "fontSize": 118.4, "color": "#ffffff", "lineHeight": 1.0 },
-          "highlight": { "top": 979.15, "left": 108, "width": 391.8, "fontFamily": "Anton", "fontSize": 181.6, "color": "#ffed4f", "lineHeight": 1.0, "maxChars": 7 },
-          "paragraph": { "top": 408.18, "left": 108, "width": 802, "fontFamily": "Poppins", "fontWeight": 500, "fontSize": 30, "color": "#035109", "lineHeight": 1.35 },
-          "number": { "top": 249.39, "left": 894.01, "fontFamily": "Poppins", "fontWeight": 700, "fontSize": 53.7, "color": "#035109" }
-        }
-      ],
-      "closing": {
-        "background": "stones-and-sacrifices/closing-card.jpg",
-        "note": "This slide never changes — it is delivered exactly as exported, with no text overlay."
-      },
+      "id": "template-1",
+      "name": "Template 1",
+      "description": "Green split backgrounds, yellow accents, bold condensed headlines — 2 content slides.",
       "canva": {
-        "designId": "DAHUnMK05Yw",
-        "designName": "Sermon Recap - Stones and Sacrifices",
-        "totalPages": 6,
-        "contentPageRange": [2, 5],
-        "closingPage": 6,
+        "designId": "DAHUmybVR3U",
+        "designName": "Sermon Recap (Template 1)",
+        "totalPages": 4,
+        "contentPageRange": [2, 3],
+        "closingPage": 4,
         "coverPage": 1,
         "coverRole": "the one large quote text box sitting in the yellow-highlighted panel near the bottom of the cover page (page 1) — styled like “Example quote”, curly quotes included. Every other text box on page 1 (the small 'Bishop Said' label, 'Scroll to be blessed', and 'one for the week') is a fixed label — never change those.",
         "slideRoles": {
@@ -62,7 +17,7 @@
           "highlight": "the large yellow/accent-colored highlight text box directly below the headline (even larger font, ALL CAPS)",
           "paragraph": "the smaller body-colored paragraph text box positioned above the headline/highlight panel"
         },
-        "numberNote": "Each content page already has a small numbered circle (1, 2, 3, 4) in the top-right matching its page order — leave those untouched."
+        "numberNote": "Each content page already has a small numbered circle (1, 2) in the top-right matching its page order — leave those untouched."
       }
     }
   ]
