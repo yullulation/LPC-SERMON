@@ -31,7 +31,7 @@ Read the sermon transcript at the bottom of this message. Draft:
 - coverQuote: something the preacher could plausibly have said, capturing the sermon's core idea, in 2 words (3 only if truly unavoidable). Never punctuation-heavy, never a full sentence.
 - Exactly ${slideCount} slide points (this template has exactly ${slideCount} content slides — not more, not fewer), each with:
   - headline: 1-2 very short words (may include a literal newline to force a line break)
-  - highlight: ONE word, 7 characters or fewer, ALL CAPS. The headline and highlight should read as one short phrase together when combined (e.g. headline "Living" + highlight "STONES" reads "Living Stones"; headline "Not \\na" + highlight "DUTY" reads "Not a Duty").
+  - highlight: ONE word, 7 characters or fewer, ALL CAPS. The headline and highlight should read as one short phrase together when combined (e.g. headline "Living" + highlight "STONES" reads "Living Stones"; headline "Not \na" + highlight "DUTY" reads "Not a Duty").
   - paragraph: 150-260 characters, a short teaching grounded in the sermon, citing a scripture reference in parentheses like "(1 Peter 2:5)", written in second-person ("you") voice, reading like a real caption someone wrote — not a summary.
   - number: "1" through "${slideCount}" in order.
 Base everything strictly on what is actually said in the transcript. Don't invent scripture references that weren't part of the sermon unless they're extremely well-known companion verses.
@@ -80,7 +80,10 @@ function loadTemplates() {
     const div = document.createElement("div");
     div.className = "template-option";
     div.dataset.id = t.id;
-    div.innerHTML = `<div class="label">${t.name}</div><div class="desc">${t.description || ""}</div>`;
+    const previewImg = t.preview
+      ? `<img class="preview" src="${t.preview}" alt="${t.name} preview">`
+      : "";
+    div.innerHTML = `${previewImg}<div class="label">${t.name}</div><div class="desc">${t.description || ""}</div>`;
     div.addEventListener("click", () => selectTemplate(t.id));
     templatesEl.appendChild(div);
   });
