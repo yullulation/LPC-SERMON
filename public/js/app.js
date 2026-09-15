@@ -57,6 +57,8 @@ Once every page looks right, finalize the transaction with finalize: "commit" (o
 STEP 5 — Hand it over
 Share all the resulting download links back in this conversation, clearly labeled in order (cover, slide 1 through slide ${slideCount}, closing), so they can be downloaded directly from here. On a phone this just means tapping each link and saving the image — no extra app needed.
 
+Then, directly below those download links, add one more line: "Edit this in Canva:" followed by the edit URL of the COPY you made in Step 2 (not the master template) — so it can be opened and adjusted by hand any time.
+
 Here is the sermon transcript:
 
 ${transcript}`;
