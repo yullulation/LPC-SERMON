@@ -69,7 +69,7 @@ ${transcript}`;
 async function init() {
   try {
     const data = await fetch("./templates.json").then((r) => r.json());
-    templatesCache = data.templates || [];
+    templatesCache = (data.templates || []).filter((t) => !t.hidden);
     loadTemplates();
   } catch (err) {
     templatesEl.textContent = "Couldn't load templates. Try reloading the page.";
