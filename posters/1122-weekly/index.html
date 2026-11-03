@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>1122 Saturdays Poster</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+  /* ============ EDIT EVENT DETAILS IN THE HTML BELOW (search "EDIT") ============ */
+  :root{
+    --g-900:#06301A;   /* deepest green */
+    --g-800:#0A4424;
+    --g-700:#0E5A2E;
+    --g-600:#13733A;
+    --g-500:#1E9447;   /* brand green */
+    --lime:#B9E24A;
+    --sun:#FFC928;     /* 1122 yellow */
+    --cream:#FFF7E4;
+    --ink:#082714;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#111}
+  .poster{
+    position:relative; width:1080px; height:1350px; overflow:hidden;
+    background:var(--g-800);
+    font-family:'Outfit',sans-serif; color:var(--cream);
+  }
+
+  /* ---------- background: sunburst + glow ---------- */
+  .rays{
+    position:absolute; inset:-400px;
+    background:repeating-conic-gradient(from 0deg at 72% 38%,
+      var(--g-700) 0deg 7deg, var(--g-800) 7deg 14deg);
+  }
+  .glow{
+    position:absolute; inset:0;
+    background:
+      radial-gradient(620px 520px at 72% 22%, rgba(185,226,74,.28), transparent 70%),
+      radial-gradient(900px 600px at 50% 110%, rgba(6,48,26,.95), transparent 70%),
+      linear-gradient(180deg, rgba(6,48,26,.0) 40%, rgba(6,48,26,.55) 100%);
+  }
+  .ring{position:absolute;border-radius:50%;}
+  .ring.r1{width:820px;height:820px;left:-330px;top:640px;border:56px solid rgba(30,148,71,.55)}
+  .ring.r2{width:520px;height:520px;left:-180px;top:790px;border:40px solid rgba(255,201,40,.85)}
+  .dot{position:absolute;border-radius:50%}
+  .dot.sun{width:230px;height:230px;left:-70px;top:200px;background:var(--sun)}
+  .dot.lime{width:40px;height:40px;left:470px;top:204px;background:var(--lime)}
+  .dot.small{width:22px;height:22px;left:986px;top:330px;background:var(--cream)}
+  .dot.behind{width:330px;height:330px;right:-60px;top:690px;background:var(--sun)}
+
+  /* ---------- header ---------- */
+  .brand{position:absolute;left:64px;top:58px;display:flex;align-items:center;gap:16px;z-index:5}
+  .brand img{width:66px;height:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+  .brand .name{font-weight:800;font-size:23px;letter-spacing:.06em;line-height:1.05}
+  .brand .sub{font-weight:500;font-size:13.5px;letter-spacing:.22em;opacity:.8;margin-top:6px;text-transform:uppercase}
+  .presents{position:absolute;left:150px;top:146px;font:500 12px 'Space Grotesk';letter-spacing:.9em;opacity:.75;z-index:5}
+
+  /* wordmark lockup (top right) */
+  .lockup{position:absolute;right:58px;top:40px;text-align:right;z-index:5}
+  .lockup .num{
+    font-family:'Fredoka';font-weight:700;font-size:178px;line-height:.82;letter-spacing:-6px;color:var(--cream);
+    text-shadow:0 8px 0 rgba(6,48,26,.35);
+  }
+  .lockup .num span{color:var(--sun)}
+  .lockup .word{
+    font-family:'Fredoka';font-weight:600;font-size:66px;line-height:1;letter-spacing:-2px;margin-top:2px;
+  }
+  .burst{position:absolute;right:-6px;top:-8px;width:64px;height:64px}
+
+  .badge{
+    position:absolute;left:560px;top:262px;z-index:6;transform:rotate(9deg);
+    background:var(--ink);border:4px solid var(--sun);border-radius:12px;padding:8px 10px 6px;
+    font-family:'Anton';color:#fff;font-size:30px;line-height:.92;text-align:center;letter-spacing:1px;
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+  }
+
+  /* ---------- theme card ---------- */
+  .card{
+    position:absolute;left:52px;right:52px;top:330px;height:600px;border-radius:44px;z-index:3;
+    background:
+      radial-gradient(420px 380px at 100% 0%, rgba(255,201,40,.75), transparent 70%),
+      linear-gradient(105deg, var(--cream) 0%, var(--cream) 48%, #FBE9A6 100%);
+    box-shadow:0 30px 60px rgba(0,0,0,.28);
+    color:var(--ink); overflow:hidden;
+  }
+  .card .kicker{
+    position:absolute;left:58px;top:56px;
+    font-family:'Kaushan Script';font-size:44px;color:var(--g-500);transform:rotate(-4deg);
+  }
+  .card .kicker::after{content:"";display:block;height:6px;width:250px;margin-top:-2px;border-radius:6px;background:var(--sun);transform:rotate(1.5deg)}
+  .pill{
+    position:absolute;right:64px;top:62px;background:var(--ink);color:var(--cream);
+    font:700 25px 'Outfit';padding:8px 22px 10px;border-radius:999px;
+  }
+  .pill::after{content:"";position:absolute;right:50px;top:100%;width:4px;height:42px;background:var(--ink)}
+  .pill::before{content:"";position:absolute;right:38px;top:calc(100% + 36px);width:28px;height:28px;border-radius:50%;background:var(--ink)}
+  .headline{
+    position:absolute;left:52px;top:140px;word-spacing:.12em;
+    font-weight:900;letter-spacing:-.055em;line-height:.86;font-size:178px;color:var(--ink);
+  }
+  .headline .l2{display:block;padding-left:62px}
+  .headline .gd{color:var(--g-500)}
+  .headline i{font-style:normal;color:var(--g-500)}
+  .headline .bul{display:inline-block;width:30px;height:30px;border-radius:50%;background:var(--ink);vertical-align:middle;margin-right:22px;transform:translateY(-14px)}
+  .verse{
+    position:absolute;left:118px;top:476px;display:flex;align-items:center;gap:18px;
+  }
+  .verse b{font:800 34px 'Outfit';letter-spacing:-.01em}
+  .verse small{font:500 15px 'Space Grotesk';letter-spacing:.14em;text-transform:uppercase;opacity:.65;white-space:nowrap;line-height:1.3;border-left:2px solid currentColor;padding-left:16px}
+
+  /* ---------- photo ---------- */
+  .people{position:absolute;left:0;width:1080px;top:792px;z-index:4;-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 97%);filter:saturate(1.08) contrast(1.04) drop-shadow(0 -10px 30px rgba(0,0,0,.25))}
+
+  /* ---------- info bar ---------- */
+  .bar{position:absolute;left:52px;right:52px;top:1140px;height:118px;z-index:6;display:flex;gap:14px}
+  .bar .main{
+    flex:1;background:var(--g-500);border-radius:22px;display:flex;align-items:center;padding:0 34px;gap:30px;
+    box-shadow:0 16px 30px rgba(0,0,0,.3);
+  }
+  .when{font-family:'Anton';font-size:44px;line-height:.95;letter-spacing:.5px;text-transform:uppercase}
+  .when small{display:block;font:600 16px 'Space Grotesk';letter-spacing:.2em;opacity:.85;margin-top:6px}
+  .sep{width:2px;align-self:stretch;margin:22px 0;background:rgba(255,247,228,.45)}
+  .where .lab{font:700 14px 'Space Grotesk';letter-spacing:.3em;text-transform:uppercase;display:flex;align-items:center;gap:10px;opacity:.9}
+  .where .lab::after{content:"";width:90px;height:2px;background:currentColor;opacity:.6}
+  .where .val{font:800 30px 'Outfit';line-height:1.05;margin-top:6px;letter-spacing:-.01em}
+  .bar .free{
+    width:176px;background:var(--sun);color:var(--ink);border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    box-shadow:0 16px 30px rgba(0,0,0,.3);
+  }
+  .free .t{font:700 14px 'Space Grotesk';letter-spacing:.28em}
+  .free .b{font-family:'Anton';font-size:52px;line-height:.95}
+  .free .s{font:700 13px 'Space Grotesk';letter-spacing:.2em}
+
+  .foot{
+    position:absolute;left:50%;transform:translateX(-50%);bottom:24px;z-index:6;
+    background:rgba(255,247,228,.95);color:var(--ink);border-radius:999px;padding:9px 26px;
+    font:700 15px 'Space Grotesk';letter-spacing:.14em;display:flex;gap:18px;align-items:center;white-space:nowrap
+  }
+  .foot i{width:6px;height:6px;border-radius:50%;background:var(--g-500);display:inline-block}
+
+  /* grain on top of everything */
+  .grain{position:absolute;inset:0;z-index:20;pointer-events:none;mix-blend-mode:overlay;opacity:.38}
+</style>
+</head>
+<body>
+<div class="poster" id="poster">
+  <div class="rays"></div>
+  <div class="glow"></div>
+  <div class="ring r1"></div>
+  <div class="ring r2"></div>
+  <div class="dot sun"></div>
+  <div class="dot lime"></div>
+  <div class="dot small"></div>
+  <div class="dot behind"></div>
+
+  <div class="brand">
+    <img src="assets/lpc-icon-white.png" alt="">
+    <div>
+      <div class="name">LIFE-POOL CHAPEL</div>
+      <div class="sub">1122 Youth Ministry</div>
+    </div>
+  </div>
+  <div class="presents">PRESENTS</div>
+
+  <div class="badge">MC<br>XX<br>II</div>
+
+  <div class="lockup">
+    <svg class="burst" viewBox="0 0 64 64" aria-hidden="true">
+      <g stroke="#FFC928" stroke-width="6" stroke-linecap="round">
+        <path d="M32 6v12"/><path d="M52 14l-8 8"/><path d="M58 34H46"/>
+      </g>
+    </svg>
+    <div class="num">11<span>22</span></div>
+    <div class="word">saturdays</div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">every saturday</div>
+    <div class="pill">our anchor</div>
+    <div class="headline">
+      have faith<i>.</i>
+      <span class="l2"><span class="bul"></span>in <span class="gd">God.</span></span>
+    </div>
+    <div class="verse">
+      <b>Mark 11:22</b>
+      <small>the verse behind our name</small>
+    </div>
+  </div>
+
+  <img class="people" src="assets/youth.png" alt="">
+
+  <div class="bar">
+    <div class="main">
+      <!-- EDIT: time -->
+      <div class="when">Every Sat<br>3PM – 6PM<small>WEEKLY MEETUP</small></div>
+      <div class="sep"></div>
+      <!-- EDIT: venue -->
+      <div class="where">
+        <div class="lab">Venue</div>
+        <div class="val">Life-Pool Chapel<br>Main Hall</div>
+      </div>
+    </div>
+    <div class="free">
+      <div class="t">ENTRY</div>
+      <div class="b">FREE</div>
+      <div class="s">AGES 16–25</div>
+    </div>
+  </div>
+
+  <div class="foot">#1122YOUTH <i></i> BRING A FRIEND <i></i> HAVE FAITH IN GOD</div>
+
+  <svg class="grain" width="1080" height="1350" aria-hidden="true">
+    <filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+    <rect width="100%" height="100%" filter="url(#n)"/>
+  </svg>
+</div>
+</body>
+</html>
