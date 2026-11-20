@@ -42,7 +42,7 @@ STEP 1 — Draft the text content
 Read the sermon transcript at the bottom of this message. Draft:
 - coverQuote: something the preacher could plausibly have said, capturing the sermon's core idea, in 2 words (3 only if truly unavoidable). Never punctuation-heavy, never a full sentence.
 ${slidesSpec}
-  - headline: 1-2 very short words (may include a literal newline to force a line break)
+  - headline: ${canva.headlineRule || "1-2 very short words (may include a literal newline to force a line break)"}
   - highlight: ONE word, 7 characters or fewer, ALL CAPS. The headline and highlight should read as one short phrase together when combined (e.g. headline "Living" + highlight "STONES" reads "Living Stones"; headline "Not \na" + highlight "DUTY" reads "Not a Duty").
   - paragraph: 150-260 characters, a short teaching grounded in the sermon, citing a scripture reference in parentheses like "(1 Peter 2:5)", written in second-person ("you") voice, reading like a real caption someone wrote — not a summary.
   - number: "1" through "${slideCount}" in order.

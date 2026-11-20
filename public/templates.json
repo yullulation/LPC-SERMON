@@ -21,7 +21,8 @@
           "highlight": "the very large black word directly below it (e.g. “forget”)",
           "paragraph": "the bold body paragraph text block directly below the large word"
         },
-        "numberNote": "Each content page already has a small red numbered circle badge (1, 2, 3) in the top-right corner, matching page order — leave those untouched."
+        "numberNote": "Each content page already has a small red numbered circle badge (1, 2, 3) in the top-right corner, matching page order — leave those untouched.",
+        "headlineRule": "ONE line only, at most 6 characters including spaces (e.g. \"Do not\", \"Die to\", \"Your\", \"No\"). Anything longer wraps onto a second line and overlaps the large word below it. If the thumbnail shows it wrapping, shorten it."
       }
     }
   ]
