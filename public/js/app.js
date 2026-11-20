@@ -27,7 +27,7 @@ function buildCanvaPrompt(template, transcript) {
 
   const slidesSpec = single
     ? `- Exactly 1 slide (this template carries ONE message for the week — not a list of points). The cover quote and this slide must be the same single message: the cover teases it, the slide unpacks it. The slide has:`
-    : `- Exactly ${slideCount} slide points (this template has exactly ${slideCount} content slides — not more, not fewer), each with:`;
+    : `- Exactly ${slideCount} slide points (this template has exactly ${slideCount} content slides — not more, not fewer). Together they break the sermon's main message into ${slideCount} parts, in the order the preacher built it, and the cover quote names that main message. Each slide has:`;
   const pagesSpec = single
     ? `page ${firstContentPage} is the content slide`
     : `pages ${firstContentPage}-${lastContentPage} are the ${slideCount} content slides`;
