@@ -23,13 +23,25 @@ function buildCanvaPrompt(template, transcript) {
 
   const [firstContentPage, lastContentPage] = canva.contentPageRange;
   const slideCount = lastContentPage - firstContentPage + 1;
+  const single = slideCount === 1;
+
+  const slidesSpec = single
+    ? `- Exactly 1 slide (this template carries ONE message for the week — not a list of points). The cover quote and this slide must be the same single message: the cover teases it, the slide unpacks it. The slide has:`
+    : `- Exactly ${slideCount} slide points (this template has exactly ${slideCount} content slides — not more, not fewer), each with:`;
+  const pagesSpec = single
+    ? `page ${firstContentPage} is the content slide`
+    : `pages ${firstContentPage}-${lastContentPage} are the ${slideCount} content slides`;
+  const slidesEdit = single
+    ? `On page ${firstContentPage}, for your slide: find`
+    : `On each of pages ${firstContentPage}-${lastContentPage}, in order, for your slides 1-${slideCount} respectively: find`;
+  const slideLabels = single ? "slide 1" : `slide 1 through slide ${slideCount}`;
 
   return `You are producing a finished "Sermon Recap Carousel" — an Instagram carousel recapping one Sunday sermon — for Life Pool Chapel. You have a live connection to Canva. Follow every step below, in order, using your Canva tools.
 
 STEP 1 — Draft the text content
 Read the sermon transcript at the bottom of this message. Draft:
 - coverQuote: something the preacher could plausibly have said, capturing the sermon's core idea, in 2 words (3 only if truly unavoidable). Never punctuation-heavy, never a full sentence.
-- Exactly ${slideCount} slide points (this template has exactly ${slideCount} content slides — not more, not fewer), each with:
+${slidesSpec}
   - headline: 1-2 very short words (may include a literal newline to force a line break)
   - highlight: ONE word, 7 characters or fewer, ALL CAPS. The headline and highlight should read as one short phrase together when combined (e.g. headline "Living" + highlight "STONES" reads "Living Stones"; headline "Not \na" + highlight "DUTY" reads "Not a Duty").
   - paragraph: 150-260 characters, a short teaching grounded in the sermon, citing a scripture reference in parentheses like "(1 Peter 2:5)", written in second-person ("you") voice, reading like a real caption someone wrote — not a summary.
@@ -41,11 +53,11 @@ The master template's Canva design ID is: ${canva.designId} ("${canva.designName
 Call copy-design on that ID first. NEVER edit that original design directly — always make your changes on the fresh copy copy-design gives you. Every step below happens on that copy, never the original.
 
 STEP 3 — Edit the copy
-Call read-design on your copy with open_transaction: true (fields including design_content) so you can see every page's real text elements and their locator_ids. The design has ${canva.totalPages} pages: page ${canva.coverPage} is the cover, pages ${firstContentPage}-${lastContentPage} are the ${slideCount} content slides, page ${canva.closingPage} is the closing card.
+Call read-design on your copy with open_transaction: true (fields including design_content) so you can see every page's real text elements and their locator_ids. The design has ${canva.totalPages} pages: page ${canva.coverPage} is the cover, ${pagesSpec}, page ${canva.closingPage} is the closing card.
 
 On page ${canva.coverPage} (the cover): find ${canva.coverRole} Replace only that text with your drafted coverQuote.
 
-On each of pages ${firstContentPage}-${lastContentPage}, in order, for your slides 1-${slideCount} respectively: find ${canva.slideRoles.headline}, ${canva.slideRoles.highlight}, and ${canva.slideRoles.paragraph}. Replace each with that slide's headline, highlight, and paragraph. ${canva.numberNote}
+${slidesEdit} ${canva.slideRoles.headline}, ${canva.slideRoles.highlight}, and ${canva.slideRoles.paragraph}. Replace each with that slide's headline, highlight, and paragraph. ${canva.numberNote}
 
 Do not touch page ${canva.closingPage} (the closing card) at all — it never changes, on any carousel, ever.
 
@@ -55,7 +67,7 @@ STEP 4 — Commit and export
 Once every page looks right, finalize the transaction with finalize: "commit" (operations omitted). This is permanent, so only do it once you've checked the thumbnails. Then call get-export-formats on your copy, and export it as PNG (all ${canva.totalPages} pages, one image per page).
 
 STEP 5 — Hand it over
-Share all the resulting download links back in this conversation, clearly labeled in order (cover, slide 1 through slide ${slideCount}, closing), so they can be downloaded directly from here. On a phone this just means tapping each link and saving the image — no extra app needed.
+Share all the resulting download links back in this conversation, clearly labeled in order (cover, ${slideLabels}, closing), so they can be downloaded directly from here. On a phone this just means tapping each link and saving the image — no extra app needed.
 
 Then, directly below those download links, add one more line: "Edit this in Canva:" followed by the edit URL of the COPY you made in Step 2 (not the master template) — so it can be opened and adjusted by hand any time.
 
